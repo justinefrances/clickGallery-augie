@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+   <title>clickGallery-augie</title>
+   <style type="text/css">
+      #divThumbs { padding: 0px; }
+      #divThumbs img { box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.33);
+                        margin: 0px 5px;
+			border-radius: 1px;
+			opacity: 1;
+			width: 125px;
+			height: auto;
+		      }
+      #divThumbs img:hover { opacity: 0.7; }
+      #caption { font-size: 12px;
+      		 color: #454545;
+		 margin: -10px 0px 0px 25px;
+	       }
+      .imgCover { height: auto;
+                  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.33);
+		  border-radius: 3px;
+		  margin: 15px 25px;
+		}
+   </style>
+   <script type="text/javascript">
+      var captionArray = [ "Macklemore with UBG students.",
+      			   "Macklemore performing.",
+			   "Macklemore performing.",
+			   "The crowd." ];
+
+      function start()
+      {
+         document.getElementById("macklemore1").addEventListener("click", function(){display("/sites/default/files/shared/macklemore1.jpg", 0);}, false);
+	 document.getElementById("macklemore2").addEventListener("click", function(){display("/sites/default/files/shared/macklemore2.jpg", 1);}, false);
+	 document.getElementById("macklemore4").addEventListener("click", function(){display("/sites/default/files/shared/macklemore4.jpg", 2);}, false);
+	 document.getElementById("macklemore5").addEventListener("click", function(){display("/sites/default/files/shared/macklemore5.jpg", 3);}, false);
+      }
+
+      function display( name, arrayIndex )
+      {
+         var imgCover = document.getElementById("imgCover");
+	 imgCover.setAttribute("src", name);
+	 imgCover.setAttribute("alt, captionArray[arrayIndex]);
+	 imgCover.setAttribute("style", "width: 500px;");
+	 var divBig = document.getElementById("divBig");
+	 var caption = document.getElementById("caption");
+	 caption.innerHTML = captionArray[arrayIndex];
+      }
+
+      window.addEventListener("load", start, false);
+   </script>
+   </head>
+
+   <body>
+      <div>
+         <div class="divThumbs" id="divThumbs">
+	    <img alt="" id="macklemore1" src="/sites/default/files/shared/macklemore1.jpg" />
+	    <img alt="" id="macklemore2" src="/sites/default/files/shared/macklemore2.jpg" />
+	    <img alt="" id="macklemore4" src="/sites/default/files/shared/macklemore4.jpg" />
+	    <img alt="" id="macklemore5" src="/sites/default/files/shared/macklemore5.jpg" />
+	 </div>
+	 <div class="divBig" id="divBig">
+	    <img alt="" class="imgCover" id="imgCover" src="/sites/default/files/shared/macklemore1.jpg" />
+	 </div>
+	 <div id="caption">
+	    Macklemore with UBG students.
+	 </div>
+      </div>
+   </body>
+</html>
